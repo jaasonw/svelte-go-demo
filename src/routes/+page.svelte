@@ -1,19 +1,35 @@
 <script>
   import { onMount } from "svelte";
 
-  let time_go = "loading...";
-  let time_js = "loading...";
-  onMount(async () => {
-    const res_go = await fetch("/api/array");
-    console.log(res_go);
-    time_go = await res_go.text();
+  let time_array_go = "loading...";
+  let time_array_js = "loading...";
 
-    const res_js = await fetch("/array_js");
-    console.log(res_js);
-    time_js = await res_js.text();
+  let time_matrix_go = "loading...";
+  let time_matrix_js = "loading...";
+
+  onMount(async () => {
+    const res_array_go = await fetch("/api/array");
+    console.log(res_array_go);
+    time_array_go = await res_array_go.text();
+
+    const res_array_js = await fetch("/array_js");
+    console.log(res_array_js);
+    time_array_js = await res_array_js.text();
+
+    const res_matrix_go = await fetch("/api/matrix");
+    console.log(res_matrix_go);
+    time_matrix_go = await res_matrix_go.text();
+
+    const res_matrix_js = await fetch("/matrix_js");
+    console.log(res_matrix_js);
+    time_matrix_js = await res_matrix_js.text();
   });
 </script>
 
 <h1>Time to add 5000 elements to an array</h1>
-<h2>Go: {time_go}</h2>
-<h2>Javascript: {time_js}</h2>
+<h2>Go: {time_array_go}</h2>
+<h2>Javascript: {time_array_js}</h2>
+<br />
+<h1>Time to multiply 2 300x300 matrices</h1>
+<h2>Go: {time_matrix_go}</h2>
+<h2>Javascript: {time_matrix_js}</h2>
