@@ -13,30 +13,38 @@
   let time_sort_go = "loading...";
   let time_sort_js = "loading...";
 
-  onMount(async () => {
-    const res_array_go = await fetch("/api/array");
-    time_array_go = await res_array_go.text();
+  onMount(() => {
+    fetch("/api/array")
+      .then((res) => res.text())
+      .then((text) => (time_array_go = text));
 
-    const res_array_js = await fetch("/array_js");
-    time_array_js = await res_array_js.text();
+    fetch("/array_js")
+      .then((res) => res.text())
+      .then((text) => (time_array_js = text));
 
-    const res_matrix_go = await fetch("/api/matrix");
-    time_matrix_go = await res_matrix_go.text();
+    fetch("/api/matrix")
+      .then((res) => res.text())
+      .then((text) => (time_matrix_go = text));
 
-    const res_matrix_js = await fetch("/matrix_js");
-    time_matrix_js = await res_matrix_js.text();
+    fetch("/matrix_js")
+      .then((res) => res.text())
+      .then((text) => (time_matrix_js = text));
 
-    const res_json_go = await fetch("/api/json");
-    time_json_go = await res_json_go.text();
+    fetch("/api/json")
+      .then((res) => res.text())
+      .then((text) => (time_json_go = text));
 
-    const res_json_js = await fetch("/json_js");
-    time_json_js = await res_json_js.text();
+    fetch("/json_js")
+      .then((res) => res.text())
+      .then((text) => (time_json_js = text));
 
-    const res_sort_go = await fetch("/api/sort");
-    time_sort_go = await res_sort_go.text();
+    fetch("/api/sort")
+      .then((res) => res.text())
+      .then((text) => (time_sort_go = text));
 
-    const res_sort_js = await fetch("/sort_js");
-    time_sort_js = await res_sort_js.text();
+    fetch("/sort_js")
+      .then((res) => res.text())
+      .then((text) => (time_sort_js = text));
   });
 </script>
 
