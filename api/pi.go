@@ -12,6 +12,7 @@ func Pi(w http.ResponseWriter, r *http.Request) {
 	const INTERVAL = 10000
 	circlePoints := 0
 	squarePoints := 0
+	pi := 0.0
 	for i := 0; i < INTERVAL*INTERVAL; i++ {
 		randX := rand.Float64() * INTERVAL
 		randY := rand.Float64() * INTERVAL
@@ -22,8 +23,9 @@ func Pi(w http.ResponseWriter, r *http.Request) {
 		}
 		squarePoints++
 
-		// pi := 4 * float64(circlePoints) / float64(squarePoints)
+		pi = 4 * float64(circlePoints) / float64(squarePoints)
 	}
+	fmt.Println(pi)
 	duration := time.Since(start)
 	// fmt.Fprintf(w, "len=%d cap=%d %v\n", len(s), cap(s), s)
 	fmt.Fprintf(w, "%f ms", float64(duration.Nanoseconds())/1000000)
