@@ -1,12 +1,9 @@
 import type { RequestEvent } from "@sveltejs/kit";
 
 export function GET({ url }: RequestEvent) {
-  let s: number[] = Array.from({ length: 5000000 }, () =>
-    Math.floor(Math.random() * 40)
-  );
   const t0 = performance.now();
   // https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/
-  let INTERVAL = 50000;
+  let INTERVAL = 10000;
   let rand_x, rand_y, origin_dist, pi;
   let circle_points = 0,
     square_points = 0;

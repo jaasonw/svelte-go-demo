@@ -9,7 +9,7 @@ import (
 
 func Pi(w http.ResponseWriter, r *http.Request) {
 	start := time.Now()
-	const INTERVAL = 50000
+	const INTERVAL = 10000
 	circlePoints := 0
 	squarePoints := 0
 	for i := 0; i < INTERVAL*INTERVAL; i++ {
