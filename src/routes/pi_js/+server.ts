@@ -17,5 +17,6 @@ export function GET({ url }: RequestEvent) {
     pi = (4 * circle_points) / square_points;
   }
   const t1 = performance.now();
+  console.log(pi);
   return new Response(`${t1 - t0} ms`);
 }
