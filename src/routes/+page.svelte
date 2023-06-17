@@ -76,5 +76,5 @@
 <h2>Javascript: {time_sort_js}</h2>
 <br />
 <h1>Monte Carlo Pi Estimation</h1>
-<h2>Go: {time_sort_go}</h2>
-<h2>Javascript: {time_sort_js}</h2>
+<h2>Go: {time_pi_go}</h2>
+<h2>Javascript: {time_pi_js}</h2>
