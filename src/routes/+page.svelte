@@ -13,6 +13,9 @@
   let time_sort_go = "loading...";
   let time_sort_js = "loading...";
 
+  let time_pi_go = "loading...";
+  let time_pi_js = "loading...";
+
   onMount(() => {
     fetch("/api/array")
       .then((res) => res.text())
@@ -45,6 +48,14 @@
     fetch("/sort_js")
       .then((res) => res.text())
       .then((text) => (time_sort_js = text));
+
+    fetch("/api/pi")
+      .then((res) => res.text())
+      .then((text) => (time_pi_go = text));
+
+    fetch("/pi_js")
+      .then((res) => res.text())
+      .then((text) => (time_pi_js = text));
   });
 </script>
 
@@ -61,5 +72,9 @@
 <h2>Javascript: {time_json_js}</h2>
 <br />
 <h1>Sort 5000000 elements</h1>
+<h2>Go: {time_sort_go}</h2>
+<h2>Javascript: {time_sort_js}</h2>
+<br />
+<h1>Monte Carlo Pi Estimation</h1>
 <h2>Go: {time_sort_go}</h2>
 <h2>Javascript: {time_sort_js}</h2>
