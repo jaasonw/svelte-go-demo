@@ -8,6 +8,7 @@ tokio = { version = "1", features = ["macros"] }
 serde_json = { version = "1", features = ["raw_value"] }
 vercel_runtime = { version = "1.0.2" }
 rand = "0.8.5"
+ndarray = "0.15.6"
 
 # You can specify a library for shared logic here (optional)
 # [lib]
@@ -21,3 +22,7 @@ path = "api/rust/array.rs"
 [[bin]]
 name = "pi"
 path = "api/rust/pi.rs"
+
+[[bin]]
+name = "sort"
+path = "api/rust/sort.rs"

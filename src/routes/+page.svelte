@@ -6,6 +6,7 @@
   let time_array_js = "loading...";
 
   let time_matrix_go = "loading...";
+  let time_matrix_rust = "loading...";
   let time_matrix_js = "loading...";
 
   let time_json_go = "loading...";
@@ -34,6 +35,10 @@
     fetch("/api/matrix")
       .then((res) => res.text())
       .then((text) => (time_matrix_go = text));
+
+    fetch("/api/rust/matrix")
+      .then((res) => res.text())
+      .then((text) => (time_matrix_rust = text));
 
     fetch("/matrix_js")
       .then((res) => res.text())
@@ -76,6 +81,7 @@
 <br />
 <h1>Time to multiply 2 300x300 matrices</h1>
 <h2>Go: {time_matrix_go}</h2>
+<h2>Rust: {time_matrix_rust}</h2>
 <h2>Javascript: {time_matrix_js}</h2>
 <br />
 <h1>Parse JSON string</h1>
