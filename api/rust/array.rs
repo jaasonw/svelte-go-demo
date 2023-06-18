@@ -16,6 +16,5 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
     let time = format!("{}.{:03} ms", duration.as_secs(), duration.subsec_millis());
     Ok(Response::builder()
         .status(StatusCode::OK)
-        .header("Content-Type", "application/text")
         .body(time.into())?)
 }

@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
 
   let time_array_go = "loading...";
+  let time_array_rust = "loading...";
   let time_array_js = "loading...";
 
   let time_matrix_go = "loading...";
@@ -18,6 +19,10 @@
 
   onMount(() => {
     fetch("/api/array")
+      .then((res) => res.text())
+      .then((text) => (time_array_go = text));
+
+    fetch("/api/rust/array")
       .then((res) => res.text())
       .then((text) => (time_array_go = text));
 
@@ -61,6 +66,7 @@
 
 <h1>Time to add 5000 elements to an array</h1>
 <h2>Go: {time_array_go}</h2>
+<h2>Rust: {time_array_rust}</h2>
 <h2>Javascript: {time_array_js}</h2>
 <br />
 <h1>Time to multiply 2 300x300 matrices</h1>
