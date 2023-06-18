@@ -14,7 +14,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
     let interval = 10000;
     let mut circle_points = 0;
     let mut square_points = 0;
-    let pi = 0.0;
+    let mut _pi = 0.0;
     for _ in 0..interval * interval {
         let rand_x = rng.gen::<f64>() * interval as f64;
         let rand_y = rng.gen::<f64>() * interval as f64;
@@ -25,10 +25,10 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
         }
         square_points += 1;
 
-        let pi = 4.0 * circle_points as f64 / square_points as f64;
+        _pi = 4.0 * circle_points as f64 / square_points as f64;
     }
     let duration = start.elapsed();
-    let time = format!("{:?} ms", duration);
+    let time = format!("{:?} ms", duration.as_secs_f64() * 1000.0);
     Ok(Response::builder()
         .status(StatusCode::OK)
         .body(time.into())?)

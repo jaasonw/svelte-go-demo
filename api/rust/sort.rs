@@ -15,7 +15,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
     let start = Instant::now();
     a.sort();
     let duration = start.elapsed();
-    let time = format!("{:?} ms", duration);
+    let time = format!("{:?} ms", duration.as_secs_f64() * 1000.0);
     Ok(Response::builder()
         .status(StatusCode::OK)
         .body(time.into())?)
