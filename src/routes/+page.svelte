@@ -24,7 +24,7 @@
 
     fetch("/api/rust/array")
       .then((res) => res.text())
-      .then((text) => (time_array_go = text));
+      .then((text) => (time_array_rust = text));
 
     fetch("/array_js")
       .then((res) => res.text())
