@@ -10,6 +10,7 @@
   let time_matrix_js = "loading...";
 
   let time_json_go = "loading...";
+  let time_json_rust = "loading...";
   let time_json_js = "loading...";
 
   let time_sort_go = "loading...";
@@ -48,6 +49,10 @@
     fetch("/api/json")
       .then((res) => res.text())
       .then((text) => (time_json_go = text));
+
+    fetch("/api/rust/json")
+      .then((res) => res.text())
+      .then((text) => (time_json_rust = text));
 
     fetch("/js/json")
       .then((res) => res.text())
@@ -91,6 +96,7 @@
 <br />
 <h1>Parse JSON string</h1>
 <h2>Go: {time_json_go}</h2>
+<h2>Rust: {time_json_rust}</h2>
 <h2>Javascript: {time_json_js}</h2>
 <br />
 <h1>Sort 5000000 elements</h1>
