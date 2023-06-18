@@ -13,7 +13,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
         v.push("test");
     }
     let duration = start.elapsed();
-    let time = format!("{}.{:06} ms", duration.as_secs(), duration.subsec_millis());
+    let time = format!("{:?} ms", duration);
     Ok(Response::builder()
         .status(StatusCode::OK)
         .body(time.into())?)

@@ -28,7 +28,7 @@ pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
         let pi = 4.0 * circle_points as f64 / square_points as f64;
     }
     let duration = start.elapsed();
-    let time = format!("{}.{:06} ms", duration.as_secs(), duration.subsec_millis());
+    let time = format!("{:?} ms", duration);
     Ok(Response::builder()
         .status(StatusCode::OK)
         .body(time.into())?)
