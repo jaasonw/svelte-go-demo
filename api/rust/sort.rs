@@ -8,9 +8,9 @@ async fn main() -> Result<(), Error> {
 }
 
 pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
-    let mut a: [u64; 5000000] = [0; 5000000];
-    for i in 0..a.len() {
-        a[i] = thread_rng().gen_range(0.0..10.0) as u64;
+    let mut a: Vec<u64> = Vec::new();
+    for _ in 0..5000000 {
+        a.push(thread_rng().gen_range(0.0..10.0) as u64);
     }
     let start = Instant::now();
     a.sort();
