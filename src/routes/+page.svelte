@@ -15,6 +15,7 @@
   let time_sort_js = "loading...";
 
   let time_pi_go = "loading...";
+  let time_pi_rust = "loading...";
   let time_pi_js = "loading...";
 
   onMount(() => {
@@ -58,6 +59,10 @@
       .then((res) => res.text())
       .then((text) => (time_pi_go = text));
 
+    fetch("/api/rust/pi")
+      .then((res) => res.text())
+      .then((text) => (time_pi_rust = text));
+
     fetch("/pi_js")
       .then((res) => res.text())
       .then((text) => (time_pi_js = text));
@@ -83,4 +88,5 @@
 <br />
 <h1>Monte Carlo Pi Estimation</h1>
 <h2>Go: {time_pi_go}</h2>
+<h2>Rust: {time_pi_rust}</h2>
 <h2>Javascript: {time_pi_js}</h2>
