@@ -1,4 +1,4 @@
-import type { RequestEvent } from "./$types";
+import type { RequestEvent } from "@sveltejs/kit";
 
 export async function GET({ url }: RequestEvent) {
   const req = await fetch(

@@ -1,4 +1,4 @@
-import type { RequestEvent } from "./$types";
+import type { RequestEvent } from "@sveltejs/kit";
 
 const multiplyMatrices = (a: any, b: any) => {
   if (!Array.isArray(a) || !Array.isArray(b) || !a.length || !b.length) {

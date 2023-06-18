@@ -1,4 +1,4 @@
-import type { RequestEvent } from "./$types";
+import type { RequestEvent } from "@sveltejs/kit";
 
 export function GET({ url }: RequestEvent) {
   let s: string[] = [];

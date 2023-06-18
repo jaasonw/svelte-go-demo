@@ -13,6 +13,7 @@
   let time_json_js = "loading...";
 
   let time_sort_go = "loading...";
+  let time_sort_rust = "loading...";
   let time_sort_js = "loading...";
 
   let time_pi_go = "loading...";
@@ -28,7 +29,7 @@
       .then((res) => res.text())
       .then((text) => (time_array_rust = text));
 
-    fetch("/array_js")
+    fetch("/js/array")
       .then((res) => res.text())
       .then((text) => (time_array_js = text));
 
@@ -40,7 +41,7 @@
       .then((res) => res.text())
       .then((text) => (time_matrix_rust = text));
 
-    fetch("/matrix_js")
+    fetch("/js/matrix")
       .then((res) => res.text())
       .then((text) => (time_matrix_js = text));
 
@@ -48,7 +49,7 @@
       .then((res) => res.text())
       .then((text) => (time_json_go = text));
 
-    fetch("/json_js")
+    fetch("/js/json")
       .then((res) => res.text())
       .then((text) => (time_json_js = text));
 
@@ -56,7 +57,11 @@
       .then((res) => res.text())
       .then((text) => (time_sort_go = text));
 
-    fetch("/sort_js")
+    fetch("/api/rust/sort")
+      .then((res) => res.text())
+      .then((text) => (time_sort_rust = text));
+
+    fetch("/js/sort")
       .then((res) => res.text())
       .then((text) => (time_sort_js = text));
 
@@ -68,7 +73,7 @@
       .then((res) => res.text())
       .then((text) => (time_pi_rust = text));
 
-    fetch("/pi_js")
+    fetch("/js/pi")
       .then((res) => res.text())
       .then((text) => (time_pi_js = text));
   });
@@ -90,6 +95,7 @@
 <br />
 <h1>Sort 5000000 elements</h1>
 <h2>Go: {time_sort_go}</h2>
+<h2>Rust: {time_sort_rust}</h2>
 <h2>Javascript: {time_sort_js}</h2>
 <br />
 <h1>Monte Carlo Pi Estimation</h1>
